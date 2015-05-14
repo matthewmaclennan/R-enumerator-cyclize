@@ -16,7 +16,7 @@ cycles<-
 #around each element. (3) For elements which can carry another bond, the single connector between the two elements will 
 #become a "=".
 sb2db<-
-#3. db to tb - (1) For all "="
+#3. db to tb - (1) Program will find all "=" in molecule. (2) Program will change, one-by-one, all "=" into "#".
 db2tb<-
 #4. tb to qb
 tb2qb<-
