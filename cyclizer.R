@@ -15,7 +15,7 @@ cyclizer<-function(SMILES,steps,){
   maxnum.l<-lapply(regmatches(smiles,gregexpr("(?<=%)[0-9]{2,}|[0-9]{1}",smiles,perl=T)),function(x) max(as.numeric(x)))
 #If the numeric is greater than or equal to 10, paste0 "%" to the left of it. Otherwise, return x+1. This gives the new
 #text string for the new maximum number to be inserted which will form the new linkage.
-  newmax.l<-lapply(maxnum,function(x) if(x+1>=10) {paste0("%",x+1)} else {x+1})
+  newmax.l<-lapply(maxnum.l,function(x) if(x+1>=10) {paste0("%",x+1)} else {x+1})
   cycles<-
 #2. sb to db - (1) Program will find all single bonds between two (adjacent) elements. (2) Program will count number of bonds 
 #around each element. (3) For elements which can carry another bond, the single connector between the two elements will 
