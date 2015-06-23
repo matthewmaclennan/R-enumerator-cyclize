@@ -9,7 +9,10 @@ PAready<-"c1c2c3ccc1.C2(=O)4.C3(=O)5."
 alcoholSMILESmatrix<-as.matrix(unlist(strsplit(alcoholSMILES,"\n")))
 Onum4<-gsub("O","O4",alcoholSMILESmatrix)
 Onum5<-gsub("O","O5",alcoholSMILESmatrix)
-alcoholPrep<-apply(cbind(Onum4,Onum5),1,function(x) paste0(x,collapse="."))
+alcoholPrep<-c()
+  for(i in 1:length(Onum4)){
+    paste0(Onum4[i],".",Onum5[-(1:i)])
+  }
 PA.mat<-paste0(PAready,alcoholPrep)
 PA.smiles<-paste0(PA.mat,collapse="\n")
 PA.sdfset<-smiles2sdf(PA.smiles)
