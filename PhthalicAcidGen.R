@@ -13,5 +13,5 @@ alcoholPrep<-apply(cbind(Onum4,Onum5),1,function(x) paste0(x,collapse="."))
 PA.mat<-paste0(PAready,alcoholPrep)
 PA.smiles<-paste0(PA.mat,collapse="\n")
 PA.sdfset<-smiles2sdf(PA.smiles)
-
+list1<-list(PA.mat,PA.smiles,PA.sdfset)
 }
